@@ -1,0 +1,1 @@
+<h1>hai</h1><?php /**PATH D:\pemweb\temanbearly-app\resources\views/dashboard1.blade.php ENDPATH**/ ?>

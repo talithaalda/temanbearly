@@ -1,0 +1,1 @@
+<?php /**PATH D:\pemweb\temanbearly-app\resources\views/login.blade.php ENDPATH**/ ?>
