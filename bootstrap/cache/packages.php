@@ -1,4 +1,11 @@
 <?php return array (
+  'cviebrock/eloquent-sluggable' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 
@@ -15,6 +22,17 @@
     'providers' => 
     array (
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
+    ),
+  ),
+  'kavist/rajaongkir' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Kavist\\RajaOngkir\\Providers\\LaravelServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'RajaOngkir' => 'Kavist\\RajaOngkir\\Facades\\RajaOngkir',
     ),
   ),
   'laravel/sail' => 

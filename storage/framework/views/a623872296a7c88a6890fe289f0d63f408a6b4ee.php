@@ -20,7 +20,7 @@
         <form action="/login" method="post">
         <?php echo csrf_field(); ?>
         <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
-    
+        <input type="hidden" name="level" value="User">
         <div class="form-floating">
             <input type="email" class="form-control  <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

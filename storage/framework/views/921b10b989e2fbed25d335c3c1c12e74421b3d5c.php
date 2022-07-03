@@ -52,7 +52,7 @@
                     <div class="col-md-5">
                         <div class="card border-0 ">
                             <div class="card-header card-2">
-                                <p class="card-text text-muted mt-md-4  mb-2 space">Order Date : <?php echo e($checkout->date_order); ?> </p>
+                                <p class="card-text text-muted mt-md-4  mb-2 space"><?php echo e($checkout->id); ?>. &nbsp; <?php echo e($checkout->date_order); ?> </p>
                                 <hr class="my-2">
                             </div>
                             <div class="card-body pt-0">
@@ -90,10 +90,7 @@
                                             <div class="col-4"><p class="mb-1"><b>Subtotal</b></p></div>
                                             <div class="flex-sm-col col-auto"><p class="mb-1"><b>Rp <?php echo e(number_format($total, 0, ".", ".")); ?></b></p></div>
                                         </div>
-                                        <div class="row justify-content-between">
-                                            <div class="col"><p class="mb-1"><b>Shipping</b></p></div>
-                                            <div class="flex-sm-col col-auto"><p class="mb-1"><b>Rp <?php echo e(number_format($checkout->ongkir, 0, ".", ".")); ?></b></p></div>
-                                        </div>
+                                        
                                         <div class="row justify-content-between">
                                             <div class="col-4"><p ><b>Total</b></p></div>
                                             <div class="flex-sm-col col-auto"><p  class="mb-1"><b>Rp <?php echo e(number_format($checkout->total, 0, ".", ".")); ?></b></p> </div>
@@ -146,4 +143,4 @@ p{
 }
 </style>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\pemweb\temanbearly-app\resources\views/dashboard/order/show.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('dashboard.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\pemweb\temanbearly-app\resources\views/dashboard/order/show.blade.php ENDPATH**/ ?>

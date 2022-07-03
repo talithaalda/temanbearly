@@ -72,7 +72,6 @@ unset($__errorArgs, $__bag); ?>
                                 </div>
                                 
                                 
-                                
                             </div>
                         </div>
                     </div>
@@ -120,13 +119,10 @@ unset($__errorArgs, $__bag); ?>
                                             <div class="flex-sm-col col-auto"><p class="mb-1"><b>Rp <?php echo e(number_format($total, 0, ".", ".")); ?></b></p></div>
                                         </div>
                                         
-                                        <div class="row justify-content-between">
-                                            <div class="col"><p class="mb-1"><b>Shipping</b></p></div>
-                                            <div class="flex-sm-col col-auto"><p class="mb-1"><b>Rp <?php echo e(number_format($ongkir, 0, ".", ".")); ?></b></p></div>
-                                        </div>
+                                        
                                         <div class="row justify-content-between">
                                             <div class="col-4"><p ><b>Total</b></p></div>
-                                            <div class="flex-sm-col col-auto"><p  class="mb-1"><b>Rp <?php echo e(number_format($total+$ongkir, 0, ".", ".")); ?></b></p> </div>
+                                            <div class="flex-sm-col col-auto"><p  class="mb-1"><b>Rp <?php echo e(number_format($total, 0, ".", ".")); ?></b></p> </div>
                                         </div><hr class="my-0">
                                     </div>
                                 </div>
@@ -136,8 +132,8 @@ unset($__errorArgs, $__bag); ?>
                 </div>
                 <input name="status" type="hidden" value= "Waiting for payment">
                 <input name="user_id" type="hidden" value= "<?php echo e(auth()->user()->id); ?>">
-                <input name="total" type="hidden" value= "<?php echo e($total+$ongkir); ?>">
-                <input name="ongkir" type="hidden" value= "<?php echo e($ongkir); ?>">
+                <input name="total" type="hidden" value= "<?php echo e($total); ?>">
+                
                 <input name="total_item" type="hidden" value= "<?php echo e($total_item); ?>">
                 <input name="checkout_id" type="hidden" >
                 <div class="row mb-md-5 text-center mt-5">

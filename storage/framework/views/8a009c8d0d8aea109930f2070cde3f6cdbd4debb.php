@@ -6,13 +6,15 @@
 <?php $__env->startSection('container'); ?>
 <h1>d</h1>
 <h1>&emsp;</h1>
-<br><br><br>
-<?php if(session()->has('success')): ?>
+
+    <?php if(session()->has('success')): ?>
 		<div class="alert alert-success" role="alert">
 		  <?php echo e(session('success')); ?>
 
 		</div>
-		<?php endif; ?>
+	<?php endif; ?>
+        
+<br>
 <form method="post" action="/cart" enctype="multipart/form-data">
     <?php echo csrf_field(); ?>
 <div class="container ">

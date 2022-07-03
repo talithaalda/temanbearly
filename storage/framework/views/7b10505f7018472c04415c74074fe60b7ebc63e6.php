@@ -83,9 +83,7 @@
                     <a class = "nav-link text-uppercase text-dark <?php echo e(($active == "kategori") ?'active': ' '); ?>" href = "/category ">Category</a>
                 </li>
                 
-               
             </ul>
-            
         </div>
         
     </div>

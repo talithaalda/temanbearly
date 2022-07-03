@@ -11,7 +11,7 @@ use App\Models\City;
 use App\Models\Courier;
 use App\Models\Order;
 use Illuminate\Support\Facades\Storage;
-use Kavist\RajaOngkir\Facades\RajaOngkir;
+// use Kavist\RajaOngkir\Facades\RajaOngkir;
 
 
 class CheckoutController extends Controller
@@ -22,24 +22,23 @@ class CheckoutController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $city = City::find(auth()->user()->city);
-        $daftarProvinsi = RajaOngkir::ongkosKirim([
-            'origin'        => $city->city_id,     // ID kota/kabupaten asal
-            'destination'   => 444,      // ID kota/kabupaten tujuan
-            'weight'        => 30,    // berat barang dalam gram
-            'courier'       => 'jne',
-            'originType'       => 'city',
-            'destinationType'  => 'city'    // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
-        ])->get();
+    {   
+        // $city = City::find(auth()->user()->city);
+        // $daftarProvinsi = RajaOngkir::ongkosKirim([
+        //     'origin'        => $city->city_id,     // ID kota/kabupaten asal
+        //     'destination'   => 444,      // ID kota/kabupaten tujuan
+        //     'weight'        => 30,    // berat barang dalam gram
+        //     'courier'       => 'jne',
+        //     'originType'       => 'city',
+        //     'destinationType'  => 'city'   
+        // ])->get();
 
         return view('checkout.form',[
             'title'=>'Checkout',
             'active'=>'checkout',
             "cart"=>cart::all(),
-            "checkout"=>checkout::all(),
-            "ekspedisi"=>Courier::all(),
-            "city"=>City::all(),
-            "ongkir"=>$daftarProvinsi[0]['costs'][0]['cost'][0]['value']
+            "checkout"=>checkout::all()
+            // "ongkir"=>$daftarProvinsi[0]['costs'][0]['cost'][0]['value']
         ]);
     }
     
@@ -67,15 +66,15 @@ class CheckoutController extends Controller
             'methodpay'=> 'required',
             'total'=> 'required',
             'total_item'=>'required',
-            'ongkir'=>'required',
+            // 'ongkir'=>'required',
             'status'=>'required'
         ]);
         if(str_contains($validatedData['total'], ".")){
             $validatedData['total']=str_replace(".", "", $validatedData['total']);;
         }
-        if(str_contains($validatedData['ongkir'], ".")){
-            $validatedData['ongkir']=str_replace(".", "", $validatedData['ongkir']);;
-        }
+        // if(str_contains($validatedData['ongkir'], ".")){
+        //     $validatedData['ongkir']=str_replace(".", "", $validatedData['ongkir']);;
+        // }
         $order =checkout::create($validatedData);
         $coID = $order->id;
         

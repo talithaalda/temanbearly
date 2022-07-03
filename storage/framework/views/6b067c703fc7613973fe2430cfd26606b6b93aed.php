@@ -27,7 +27,7 @@
   <?php $__currentLoopData = $checkout->reverse(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
   <div class="card mb-3 col-lg-11">
     
-    <div class="card-header"><b><?php echo e($c->user->username); ?></b>  
+    <div class="card-header"> <?php echo e($c->id); ?>. <b><?php echo e($c->user->username); ?></b>  
       <p class="d-inline" style="color: grey"><?php echo e($c->date_order); ?></p>
       <a href="/dashboard/orders/<?php echo e($c->id); ?>" class="badge bg-warning text-decoration-none d-inline" style="margin-left: 10px"><span data-feather="eye"></span>Details</a>
       <form action="/dashboard/orders/<?php echo e($c->id); ?>" method="post" class="d-inline">
@@ -57,7 +57,7 @@
       <form action="/dashboard/orders/<?php echo e($c->id); ?>" method="post" class="position-absolute d-inline" style="text-align: right; right:10px;" >
         <?php echo method_field('delete'); ?>
         <?php echo csrf_field(); ?>
-        <button class="badge bg-danger text-decoration-none border-0" style="margin-left: 10px" onclick="return confirm('Are you sure to cancel this order?')">
+        <button class="badge bg-danger text-decoration-none border-0" style="margin-left: 10px" onclick="return confirm('Are you sure to delete this order?')">
         <span data-feather="x-circle"></span></button>
         </form>
       </div>

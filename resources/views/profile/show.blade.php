@@ -9,20 +9,15 @@
   </div>
 @endif
 <div class="row">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 ">
-        
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 ">
             <br><br>      
             <div class="rectangle">                
             <h5>hello {{ auth()->user()->name }}!</h5>        
             <div>
                 <ul>
-                    
                     <ul>
                         <a class="text-decoration-none text-dark" href="/orderhistory">Order History</a>
                     </ul>
-<!--                             <li>
-                        <a href="myaccount/wishlist">wish list</a>
-                    </li> --><!--20211112 by safira -->
                 </ul>
             </div>
         </div>

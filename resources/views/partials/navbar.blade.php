@@ -84,9 +84,7 @@
                 {{-- <li class = "nav-item px-2 py-2">
                     <a class = "nav-link text-uppercase text-dark {{ ($active == "about") ?'active': ' ' }}" href = "#about">About us</a>
                 </li> --}}
-               
             </ul>
-            
         </div>
         
     </div>

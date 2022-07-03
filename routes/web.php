@@ -69,6 +69,7 @@ Route::get('/category/{category:slug}',function(category $category){
 });
 
 Route::get('/login',[LoginController::class,'index'] )->name('login')->middleware('guest');
+Route::get('/admin',[LoginController::class,'indexAdmin'] )->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class,'authenticate'] );
 Route::post('/logout',[LoginController::class,'logout'] );
 Route::get('/register',[RegisterController::class,'index'] )->middleware('guest');

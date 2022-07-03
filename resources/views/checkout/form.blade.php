@@ -56,23 +56,7 @@
                                     <div class="invalid-feedback">{{ $message }}</div> @enderror
                                     {{-- <input type="text" class="form-control form-control-sm" name="NAME" id="NAME" aria-describedby="helpId" placeholder="BBBootstrap Team"> --}}
                                 </div>
-                                {{-- <div class="mb-3">
-                                    <label for="Ekspedisi" class="small text-muted mb-1">EKSPEDISI</label>
-                                    <select class="form-select" name="ekspedisi_id">
-                                        @foreach($ekspedisi as $c)
-                                        @if(old("ekspedisi_id") == $c->id)
-                                        <option value="{{ $c->id }}" selected>{{ $c->title }}</option>
-                                        @else
-                                        <option value="{{ $c->id }}" >{{ $c->title }}</option>
-                                        @endif            
-                                        @endforeach
-                                      </select>
-                            
-                                </div> --}}
-                                {{-- <div class="form-group">
-                                    <label for="NAME" class="small text-muted mb-1">CARD NUMBER</label>
-                                    <input type="text" class="form-control form-control-sm" name="NAME" id="NAME" aria-describedby="helpId" placeholder="4534 5555 5555 5555">
-                                </div> --}}
+                                
                                 
                             </div>
                         </div>
@@ -121,13 +105,13 @@
                                             <div class="flex-sm-col col-auto"><p class="mb-1"><b>Rp {{ number_format($total, 0, ".", ".")  }}</b></p></div>
                                         </div>
                                         
-                                        <div class="row justify-content-between">
+                                        {{-- <div class="row justify-content-between">
                                             <div class="col"><p class="mb-1"><b>Shipping</b></p></div>
                                             <div class="flex-sm-col col-auto"><p class="mb-1"><b>Rp {{ number_format($ongkir, 0, ".", ".")  }}</b></p></div>
-                                        </div>
+                                        </div> --}}
                                         <div class="row justify-content-between">
                                             <div class="col-4"><p ><b>Total</b></p></div>
-                                            <div class="flex-sm-col col-auto"><p  class="mb-1"><b>Rp {{ number_format($total+$ongkir, 0, ".", ".")  }}</b></p> </div>
+                                            <div class="flex-sm-col col-auto"><p  class="mb-1"><b>Rp {{ number_format($total, 0, ".", ".")  }}</b></p> </div>
                                         </div><hr class="my-0">
                                     </div>
                                 </div>
@@ -137,8 +121,8 @@
                 </div>
                 <input name="status" type="hidden" value= "Waiting for payment">
                 <input name="user_id" type="hidden" value= "{{ auth()->user()->id }}">
-                <input name="total" type="hidden" value= "{{ $total+$ongkir }}">
-                <input name="ongkir" type="hidden" value= "{{ $ongkir }}">
+                <input name="total" type="hidden" value= "{{ $total }}">
+                {{-- <input name="ongkir" type="hidden" value= "{{ $ongkir }}"> --}}
                 <input name="total_item" type="hidden" value= "{{ $total_item }}">
                 <input name="checkout_id" type="hidden" >
                 <div class="row mb-md-5 text-center mt-5">

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('dashboard.layouts.main')
 
 @section('container')
 <div class=" container-fluid my-5 mt-5 py-5 ">
@@ -54,7 +54,7 @@
                     <div class="col-md-5">
                         <div class="card border-0 ">
                             <div class="card-header card-2">
-                                <p class="card-text text-muted mt-md-4  mb-2 space">Order Date : {{ $checkout->date_order }} </p>
+                                <p class="card-text text-muted mt-md-4  mb-2 space">{{ $checkout->id }}. &nbsp; {{ $checkout->date_order }} </p>
                                 <hr class="my-2">
                             </div>
                             <div class="card-body pt-0">
@@ -92,10 +92,10 @@
                                             <div class="col-4"><p class="mb-1"><b>Subtotal</b></p></div>
                                             <div class="flex-sm-col col-auto"><p class="mb-1"><b>Rp {{ number_format($total, 0, ".", ".")  }}</b></p></div>
                                         </div>
-                                        <div class="row justify-content-between">
+                                        {{-- <div class="row justify-content-between">
                                             <div class="col"><p class="mb-1"><b>Shipping</b></p></div>
                                             <div class="flex-sm-col col-auto"><p class="mb-1"><b>Rp {{ number_format($checkout->ongkir, 0, ".", ".")  }}</b></p></div>
-                                        </div>
+                                        </div> --}}
                                         <div class="row justify-content-between">
                                             <div class="col-4"><p ><b>Total</b></p></div>
                                             <div class="flex-sm-col col-auto"><p  class="mb-1"><b>Rp {{ number_format($checkout->total, 0, ".", ".")  }}</b></p> </div>

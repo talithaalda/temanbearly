@@ -16,13 +16,20 @@ class LoginController extends Controller
             'active'=>'login'
         ]);
     }
+    public function indexAdmin(){
+        return view('login.indexAdmin',[
+            'title'=>'Login',
+            'active'=>'login'
+        ]);
+    }
     public function authenticate(Request $request){
         $credentials = $request->validate([
             'email'=> 'required|email',
             'password'=>'required',
+            'level'=>'required'
         ]);
         if(Auth::attempt($credentials)){
-            if($credentials['email']=='admin@admin.com'){
+            if($credentials['level']=='Admin'){
                 $request->session()->regenerate();
                 return redirect()->intended('/dashboard');
             }
